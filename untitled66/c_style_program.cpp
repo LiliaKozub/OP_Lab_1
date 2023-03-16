@@ -1,6 +1,3 @@
-//
-// Created by user on 09.03.2023.
-//
 #include <iostream>
 #include "c_style_program.h"
 #include <string.h>
@@ -12,10 +9,11 @@ using namespace std;
 
 //Функція, що зчитує текст з клавіатури
 char* input_code_c(char* input) {
+    bool loop = true;
     cout << "Input text of code and press Ctrl+D to stop input:\n" << endl;
-    while (1) {
+    while (loop) {
         if (GetAsyncKeyState(VK_CONTROL) && GetAsyncKeyState('D')) {
-            break;
+            loop = false;
         }
         else {
             char c = _getch();
@@ -23,7 +21,7 @@ char* input_code_c(char* input) {
                 printf("\n");
                 strcat(input, "\n");
             }
-            else if (!(GetAsyncKeyState(VK_CONTROL) && GetAsyncKeyState('D'))) { // додано умову для перевірки ctrl+d
+            else if (!(GetAsyncKeyState(VK_CONTROL) && GetAsyncKeyState('D'))) {
                 cout << c;
                 strncat(input, &c, 1);
             }
@@ -46,7 +44,7 @@ void write_data_to_file_c(char *filename, char *input) {
 
 //Функція, що виводить вміст файлу на екран
 void output_data_from_file_c(char* filename) {
-    cout<< "\nThe contents of file: " << filename << endl;
+    cout<< "\n\nThe contents of \"" << filename <<"\"" << " file:" << endl;
     FILE* input_file = fopen(filename, "r");
     if (input_file == NULL) {
         cout << "Unable to open file!\n";
@@ -56,18 +54,18 @@ void output_data_from_file_c(char* filename) {
     char line[1024];
     while (fgets(line, 1024, input_file)) {
         cout << line;
-        if((ftell(input_file))==0)
-            printf("The file is empty\n");
     }
     fclose(input_file);
 }
+
 
 //Функція для доповнення файлу
 void append_text_c(char* filename) {
     char append_input[1024];
     int choice = -1;
     while (choice != 1 && choice != 0) {
-        cout << "\nDo you want to add to file?\nYes - enter ""1""\nNo - enter ""0""\n";
+        cout << "\nDo you want to add to file?" << endl
+             << "Yes - enter \"1\"\nNo - enter \"0\"" << endl;
         cin >> choice;
         if (choice != 1 && choice != 0) {
             cout <<"Invalid input! Please enter either ""1"" or ""0""\n";

@@ -47,9 +47,7 @@ int main(int argc, char* argv[]) {
         string filename2 = "identifiers.txt";
         string filename3 = "sorted_identifiers.txt";
         string identifiers[MAX_IDENTIFIERS];
-        string identifier;
         int num_identifiers = 0;
-        string line;
 
         input = input_code(input);
         cout << "\nYour code:" << endl;

@@ -1,6 +1,3 @@
-//
-// Created by user on 09.03.2023.
-//
 #include "c++_style_program.h"
 #include <iostream>
 #include <fstream>
@@ -23,7 +20,7 @@ using namespace std;
                  cout << "\n";
                  input += "\n";
              }
-             else if (!(GetAsyncKeyState(VK_CONTROL) && GetAsyncKeyState('D'))) { // додано умову для перевірки ctrl+d
+             else if (!(GetAsyncKeyState(VK_CONTROL) && GetAsyncKeyState('D'))) {
                  cout << c;
                  input += c;
              }
@@ -48,7 +45,7 @@ void write_data_to_file(string filename, string input){
 
 //Функція, що виводить вміст файлу на екран
 void output_data_from_file(string filename){
-     cout<< "\nThe contents of file: " << filename << endl;
+     cout<< "\n\nThe contents of \"" << filename <<"\"" << " file:" << endl;
     ifstream input_file(filename);
     if (!input_file) {
         cout << "Unable to open file!\n";
@@ -58,8 +55,6 @@ void output_data_from_file(string filename){
     while (getline(input_file, line)) {
         cout << line << endl;
     }
-    if(input_file.tellg()==0)
-        printf("The file is empty\n");
     input_file.close();
 }
 
@@ -69,7 +64,7 @@ void append_text(string filename){
     int choice = -1;
     while (choice != 1 && choice != 0) {
         cout << "\nDo you want to add to file?" << endl
-             << "Yes - enter ""1""\nNo - enter ""0""" << endl;
+             << "Yes - enter \"1\"\nNo - enter \"0\"" << endl;
         cin >> choice;
         if (choice != 1 && choice != 0) {
             cout << "Invalid input! Please enter either ""1"" or ""0""" << endl;
@@ -100,7 +95,6 @@ bool is_logical_operator(string sub_str, string sub_str2) {
 string find_identifier(string line, size_t pos) {
     string identifier;
 
-    // видаляємо всі пробіли перед першим символом у рядку
     size_t first_non_space = line.find_first_not_of(" ");
     if (first_non_space != string::npos && first_non_space > 0) {
         line.erase(0, first_non_space);
