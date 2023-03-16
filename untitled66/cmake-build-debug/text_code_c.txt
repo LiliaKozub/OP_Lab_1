@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m = 0;
+    int n = 4;
+    float a, b;
+    float sum, frac;
+    m = 3;
+
+    if( m == n){
+        a = m + n;
+        b = abs(m - n);
+    }
+    else{
+        a = m;
+        b = n;
+    }
+
+    sum = a + b;
+    frac = a/b;
+
+    cout << sum << endl;
+    cout << frac << endl;
+
+    return 0;
+}

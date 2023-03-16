@@ -1,0 +1,8 @@
+# ninja log v5
+3	382	7006065328228195	CMakeFiles/untitled66.dir/main.cpp.obj	652ffba16fb3ff
+2863	3017	7006287248123385	untitled66.exe	8e5a820e2106529
+12	2766	7006284784211687	CMakeFiles/untitled66.dir/c++_style_program.cpp.obj	ec9a4c67f787760b
+8	2862	7006287246615619	CMakeFiles/untitled66.dir/c_style_program.cpp.obj	472472e4bef1bbf9
+7	933	7006310191619278	CMakeFiles/untitled66.dir/main.cpp.obj	652ffba16fb3ff
+11	2893	7006310211462909	CMakeFiles/untitled66.dir/c++_style_program.cpp.obj	ec9a4c67f787760b
+2893	3011	7006310212585542	untitled66.exe	8e5a820e2106529
